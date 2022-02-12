@@ -12,3 +12,4 @@ export const RANDOM_AGE = faker.datatype.number({
 export const RANDOM_NUM = faker.datatype.number();
 
 export const WEB_URL = 'https://demoqa.com/webtables'
+
