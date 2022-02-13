@@ -220,8 +220,8 @@ describe('Sorting table', () => {
         cy.log('**sort by desc**')
         cy.contains('.rt-resizable-header-content', 'First Name').click()
         cy.contains('.rt-resizable-header-content', 'First Name')
-    })
-})
+      });
+    });
 
       it('Sort First Name by asc', () => {
         cy.get(DATA_LOCATORS.firstNameColumn) 
@@ -232,25 +232,10 @@ describe('Sorting table', () => {
           cy.log('**sort by asc**')
           cy.contains('.rt-resizable-header-content', 'First Name').click()
           cy.contains('.rt-resizable-header-content', 'First Name')
-        })
-    })
-    //   const toStrings = (cells$) => _.map(cells$, 'First Name')
-    //   const toNumbers = (prices) => _.map(prices, Number)
+        });
+    });
 
-    //   cy.get('[col-id=price].ag-cell')
-    //   .then(toStrings)
-    //   .then(toNumbers)
-    //   .then((prices) => {
-    //     // confirm prices are sorted
-    //     // by sorting them ourselves
-    //     // and comparing with the input list
-    //     const sorted = _.sortBy(prices)
-
-    //     expect(prices, 'cells are sorted 📈').to.deep.equal(sorted)
-    //   })
-    // })
-
-      it('Sort Last Name by desc', () => {
+    it('Sort Last Name by desc', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
@@ -259,8 +244,8 @@ describe('Sorting table', () => {
           cy.log('**sort by desc**')
           cy.contains('.rt-resizable-header-content', 'Last Name').click()
           cy.contains('.rt-resizable-header-content', 'Last Name')
-        })
-    })
+        });
+    });
 
     it('Sort Last Name by asc', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
@@ -271,8 +256,8 @@ describe('Sorting table', () => {
           cy.log('**sort by asc**')
           cy.contains('.rt-resizable-header-content', 'Last Name').click()
           cy.contains('.rt-resizable-header-content', 'Last Name')
-        })
-    })
+        });
+    });
 
     it('Sort Age by desc', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
@@ -283,8 +268,8 @@ describe('Sorting table', () => {
           cy.log('**sort by desc**')
           cy.contains('.rt-resizable-header-content', 'Age').click()
           cy.contains('.rt-resizable-header-content', 'Age')
-        })
-    })
+        });
+    });
 
     it('Sort Age by asc', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
@@ -295,8 +280,8 @@ describe('Sorting table', () => {
           cy.log('**sort by asc**')
           cy.contains('.rt-resizable-header-content', 'Age').click()
           cy.contains('.rt-resizable-header-content', 'Age')
-        })
-    })
+        });
+    });
 
     it('Sort Email by desc', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
@@ -307,8 +292,8 @@ describe('Sorting table', () => {
           cy.log('**sort by desc**')
           cy.contains('.rt-resizable-header-content', 'Email').click()
           cy.contains('.rt-resizable-header-content', 'Email')
-        })
-    })
+        });
+    });
 
     it('Sort Email by asc', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
@@ -319,8 +304,8 @@ describe('Sorting table', () => {
           cy.log('**sort by asc**')
           cy.contains('.rt-resizable-header-content', 'Email').click()
           cy.contains('.rt-resizable-header-content', 'Email')
-        })
-    })
+        });
+    });
 
     it('Sort Salary by desc', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
@@ -331,8 +316,8 @@ describe('Sorting table', () => {
           cy.log('**sort by desc**')
           cy.contains('.rt-resizable-header-content', 'Salary').click()
           cy.contains('.rt-resizable-header-content', 'Salary')
-        })
-    })
+        });
+    });
 
     it('Sort Salary by asc', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
@@ -343,8 +328,8 @@ describe('Sorting table', () => {
           cy.log('**sort by asc**')
           cy.contains('.rt-resizable-header-content', 'Salary').click()
           cy.contains('.rt-resizable-header-content', 'Salary')
-        })
-    })
+        });
+    });
 
     it('Sort Department by desc', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
@@ -356,7 +341,8 @@ describe('Sorting table', () => {
           cy.contains('.rt-resizable-header-content', 'Department').click()
           cy.contains('.rt-resizable-header-content', 'Department')
         })
-    })
+    });
+    
     it('Sort Department by asc', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
@@ -367,8 +353,5 @@ describe('Sorting table', () => {
           cy.contains('.rt-resizable-header-content', 'Department').click()
           cy.contains('.rt-resizable-header-content', 'Department')
         })
-    })
+    });
 });
-
-
-
