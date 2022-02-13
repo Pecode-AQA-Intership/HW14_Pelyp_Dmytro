@@ -212,7 +212,7 @@ it ('Deleting Department value from searchbox', () => {
 
 describe('Sorting table', () => {
     it('Sort First Name by desc', () => {
-      cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(1) > div.rt-resizable-header-content') 
+      cy.get(DATA_LOCATORS.firstNameColumn) 
       .within(() => {
         cy.get('[role=columnheader] .ag-row')
         .should('have.length', 0) 
@@ -224,7 +224,7 @@ describe('Sorting table', () => {
 })
 
       it('Sort First Name by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(1) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.firstNameColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0)  
@@ -251,7 +251,7 @@ describe('Sorting table', () => {
     // })
 
       it('Sort Last Name by desc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(2) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -263,7 +263,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Last Name by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(2) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -275,7 +275,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Age by desc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(3) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -287,7 +287,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Age by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(3) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -299,7 +299,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Email by desc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(4) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -311,7 +311,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Email by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(4) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -323,7 +323,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Salary by desc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(5) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -335,7 +335,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Salary by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(5) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -347,7 +347,7 @@ describe('Sorting table', () => {
     })
 
     it('Sort Department by desc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(6) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
@@ -358,7 +358,7 @@ describe('Sorting table', () => {
         })
     })
     it('Sort Department by asc', () => {
-        cy.get('#app > div > div > div.row > div.col-12.mt-4.col-md-6 > div.web-tables-wrapper > div.ReactTable.-striped.-highlight > div.rt-table > div.rt-thead.-header > div > div:nth-child(6) > div.rt-resizable-header-content') 
+        cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
           cy.get('[role=columnheader] .ag-row')
           .should('have.length', 0) 
