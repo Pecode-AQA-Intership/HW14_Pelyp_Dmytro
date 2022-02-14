@@ -13,3 +13,4 @@ export const RANDOM_NUM = faker.datatype.number();
 
 export const WEB_URL = 'https://demoqa.com/webtables'
 
+export const REGISTRATION_FORM_URL = 'https://demoqa.com/automation-practice-form'

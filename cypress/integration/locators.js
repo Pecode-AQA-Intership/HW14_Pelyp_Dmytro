@@ -15,4 +15,5 @@ export const DATA_LOCATORS = {
     emailColumn : ".rt-th:nth-child(4)",
     salaryColumn : ".rt-th:nth-child(5)",
     departmentColumn : ".rt-th:nth-child(6)",
-}
+};
+

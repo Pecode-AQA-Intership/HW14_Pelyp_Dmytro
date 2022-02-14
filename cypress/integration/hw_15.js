@@ -3,7 +3,8 @@ import { DATA_LOCATORS } from './locators.js';
 
 describe('Creating new user and verification', () => {
     before (()=> {
-    cy.visit(data.WEB_URL)});
+    cy.visit(data.WEB_URL)
+});
 
 it('Filling data in the "First Name" field  and verification', () => {
     cy.contains('Add').click()
