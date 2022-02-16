@@ -1,5 +1,8 @@
 import * as data from './consts.js';
 import { DATA_LOCATORS } from './locators.js'; 
+import * as func from './funcs.js';
+
+const { _ } = Cypress;
 
 describe('Creating new user and verification', () => {
     before (()=> {
@@ -211,7 +214,7 @@ it ('Deleting Department value from searchbox', () => {
 });
 
 describe('Sorting table', () => {
-    it('Sort First Name by desc', () => {
+    it('Sort First Name by desc and verification', () => {
       cy.get(DATA_LOCATORS.firstNameColumn) 
       .within(() => {
         cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -219,11 +222,16 @@ describe('Sorting table', () => {
   
         cy.log('**sort by desc**')
         cy.contains(DATA_LOCATORS.columnHeader, 'First Name').click()
-        // .should("have.class", "-sort-desc")
+        .then(func.toStrings)
+        .then(func.toNumbers)
+        .then((names) => {
+            const sorted = _.sortBy(names)
+            expect(names).to.deep.equal(sorted)
+        })
       });
     });
 
-      it('Sort First Name by asc', () => {
+      it('Sort First Name by asc and verification', () => {
         cy.get(DATA_LOCATORS.firstNameColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -231,11 +239,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'First Name').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((names) => {
+              const sorted = _.sortBy(names)
+              expect(names).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Last Name by desc', () => {
+    it('Sort Last Name by desc and verification', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -243,11 +256,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by desc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Last Name').click()
-        //   .should("have.class", "-sort-desc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((lastnames) => {
+              const sorted = _.sortBy(lastnames)
+              expect(lastnames).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Last Name by asc', () => {
+    it('Sort Last Name by asc and verification', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -255,11 +273,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Last Name').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((lastnames) => {
+              const sorted = _.sortBy(lastnames)
+              expect(lastnames).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Age by desc', () => {
+    it('Sort Age by desc and verification', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -267,11 +290,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by desc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Age').click()
-        //   cy.contains("have.class", "-sort-desc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((age) => {
+              const sorted = _.sortBy(age)
+              expect(age).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Age by asc', () => {
+    it('Sort Age by asc and verification', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -279,11 +307,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Age').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((age) => {
+              const sorted = _.sortBy(age)
+              expect(age).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Email by desc', () => {
+    it('Sort Email by desc and verification', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -291,11 +324,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by desc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Email').click()
-        //   cy.contains("have.class", "-sort-desc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((email) => {
+              const sorted = _.sortBy(email)
+              expect(email).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Email by asc', () => {
+    it('Sort Email by asc and verification', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -303,11 +341,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Email').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((email) => {
+              const sorted = _.sortBy(email)
+              expect(email).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Salary by desc', () => {
+    it('Sort Salary by desc and verification', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -315,11 +358,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by desc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Salary').click()
-        //   cy.contains("have.class", "-sort-desc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((salary) => {
+              const sorted = _.sortBy(salary)
+              expect(salary).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Salary by asc', () => {
+    it('Sort Salary by asc and verification', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -327,11 +375,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Salary').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((salary) => {
+              const sorted = _.sortBy(salary)
+              expect(salary).to.deep.equal(sorted)
+          })
         });
     });
 
-    it('Sort Department by desc', () => {
+    it('Sort Department by desc and verification', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -339,11 +392,16 @@ describe('Sorting table', () => {
     
           cy.log('**sort by desc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Department').click()
-        //   .should("have.class", "-sort-desc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((department) => {
+              const sorted = _.sortBy(department)
+              expect(department).to.deep.equal(sorted)
+          })
         })
     });
     
-    it('Sort Department by asc', () => {
+    it('Sort Department by asc and verification', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
           cy.get(DATA_LOCATORS.generalColumnHeader)
@@ -351,7 +409,12 @@ describe('Sorting table', () => {
     
           cy.log('**sort by asc**')
           cy.contains(DATA_LOCATORS.columnHeader, 'Department').click()
-        //   .should("have.class", "-sort-asc")
+          .then(func.toStrings)
+          .then(func.toNumbers)
+          .then((department) => {
+              const sorted = _.sortBy(department)
+              expect(department).to.deep.equal(sorted)
+          })
         })
     });
     it ("Checking that the 'Action' column isn't sortable", () => {
