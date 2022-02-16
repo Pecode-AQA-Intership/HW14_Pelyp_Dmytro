@@ -3,7 +3,7 @@ import { DATA_LOCATORS } from './locators.js';
 
 describe('Creating new user and verification', () => {
     before (()=> {
-    cy.visit(data.WEB_URL)});
+    cy.visit("/webtables")});
 
 it('Filling data in the "First Name" field  and verification', () => {
     cy.contains('Add').click()
@@ -214,144 +214,150 @@ describe('Sorting table', () => {
     it('Sort First Name by desc', () => {
       cy.get(DATA_LOCATORS.firstNameColumn) 
       .within(() => {
-        cy.get('[role=columnheader] .ag-row')
+        cy.get(DATA_LOCATORS.generalColumnHeader)
         .should('have.length', 0) 
   
         cy.log('**sort by desc**')
-        cy.contains('.rt-resizable-header-content', 'First Name').click()
-        cy.contains('.rt-resizable-header-content', 'First Name')
+        cy.contains(DATA_LOCATORS.columnHeader, 'First Name').click()
+        // .should("have.class", "-sort-desc")
       });
     });
 
       it('Sort First Name by asc', () => {
         cy.get(DATA_LOCATORS.firstNameColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0)  
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'First Name').click()
-          cy.contains('.rt-resizable-header-content', 'First Name')
+          cy.contains(DATA_LOCATORS.columnHeader, 'First Name').click()
+        //   .should("have.class", "-sort-asc")
         });
     });
 
     it('Sort Last Name by desc', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by desc**')
-          cy.contains('.rt-resizable-header-content', 'Last Name').click()
-          cy.contains('.rt-resizable-header-content', 'Last Name')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Last Name').click()
+        //   .should("have.class", "-sort-desc")
         });
     });
 
     it('Sort Last Name by asc', () => {
         cy.get(DATA_LOCATORS.lastNameColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'Last Name').click()
-          cy.contains('.rt-resizable-header-content', 'Last Name')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Last Name').click()
+        //   .should("have.class", "-sort-asc")
         });
     });
 
     it('Sort Age by desc', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by desc**')
-          cy.contains('.rt-resizable-header-content', 'Age').click()
-          cy.contains('.rt-resizable-header-content', 'Age')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Age').click()
+        //   cy.contains("have.class", "-sort-desc")
         });
     });
 
     it('Sort Age by asc', () => {
         cy.get(DATA_LOCATORS.ageColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'Age').click()
-          cy.contains('.rt-resizable-header-content', 'Age')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Age').click()
+        //   .should("have.class", "-sort-asc")
         });
     });
 
     it('Sort Email by desc', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by desc**')
-          cy.contains('.rt-resizable-header-content', 'Email').click()
-          cy.contains('.rt-resizable-header-content', 'Email')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Email').click()
+        //   cy.contains("have.class", "-sort-desc")
         });
     });
 
     it('Sort Email by asc', () => {
         cy.get(DATA_LOCATORS.emailColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'Email').click()
-          cy.contains('.rt-resizable-header-content', 'Email')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Email').click()
+        //   .should("have.class", "-sort-asc")
         });
     });
 
     it('Sort Salary by desc', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by desc**')
-          cy.contains('.rt-resizable-header-content', 'Salary').click()
-          cy.contains('.rt-resizable-header-content', 'Salary')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Salary').click()
+        //   cy.contains("have.class", "-sort-desc")
         });
     });
 
     it('Sort Salary by asc', () => {
         cy.get(DATA_LOCATORS.salaryColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'Salary').click()
-          cy.contains('.rt-resizable-header-content', 'Salary')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Salary').click()
+        //   .should("have.class", "-sort-asc")
         });
     });
 
     it('Sort Department by desc', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by desc**')
-          cy.contains('.rt-resizable-header-content', 'Department').click()
-          cy.contains('.rt-resizable-header-content', 'Department')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Department').click()
+        //   .should("have.class", "-sort-desc")
         })
     });
     
     it('Sort Department by asc', () => {
         cy.get(DATA_LOCATORS.departmentColumn) 
         .within(() => {
-          cy.get('[role=columnheader] .ag-row')
+          cy.get(DATA_LOCATORS.generalColumnHeader)
           .should('have.length', 0) 
     
           cy.log('**sort by asc**')
-          cy.contains('.rt-resizable-header-content', 'Department').click()
-          cy.contains('.rt-resizable-header-content', 'Department')
+          cy.contains(DATA_LOCATORS.columnHeader, 'Department').click()
+        //   .should("have.class", "-sort-asc")
         })
     });
+    it ("Checking that the 'Action' column isn't sortable", () => {
+        cy.get(DATA_LOCATORS.actionColumn).click()
+        .should("not.have.class", "-sort-desc")
+        cy.get(DATA_LOCATORS.actionColumn).click()
+        .should("not.have.class", "-sort-asc")
+      })
 });
