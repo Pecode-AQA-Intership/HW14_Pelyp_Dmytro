@@ -210,7 +210,7 @@ it ('Clicking on searchbox field and search user by Department', () => {
 it ('Deleting Department value from searchbox', () => {
     cy.get(DATA_LOCATORS.searchBox).click()
     .clear()
-})
+});
 });
 
 describe('Sorting table', () => {
@@ -422,5 +422,5 @@ describe('Sorting table', () => {
         .should("not.have.class", "-sort-desc")
         cy.get(DATA_LOCATORS.actionColumn).click()
         .should("not.have.class", "-sort-asc")
-      })
+      });
 });
