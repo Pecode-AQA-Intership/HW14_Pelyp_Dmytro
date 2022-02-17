@@ -10,7 +10,7 @@ export const RANDOM_AGE = faker.datatype.number({
     'max': 80
 });
 export const RANDOM_NUM = faker.datatype.number();
-
-export const WEB_URL = 'https://demoqa.com/webtables'
-
-export const REGISTRATION_FORM_URL = 'https://demoqa.com/automation-practice-form'
+export const RANDOM_PHONE_NUMBER = faker.datatype.number({
+    'min': 1000000000,
+    'max': 9999999999
+});
