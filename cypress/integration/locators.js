@@ -18,4 +18,4 @@ export const DATA_LOCATORS = {
     actionColumn : '.rt-th:nth-child(7)',
     columnHeader : '.rt-resizable-header-content',
     generalColumnHeader : '[role=columnheader] .ag-row',
-}
+};
