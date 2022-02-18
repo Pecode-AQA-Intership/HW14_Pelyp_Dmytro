@@ -1,6 +1,6 @@
 import * as testData from './consts.js';
 import {DATA_LOCATORS} from './locators.js';
-import * as func from './funcs.js'
+import * as func from './funcs.js';
 
 describe('Posistive flow testing', () => {
     before (()=> {
@@ -23,56 +23,147 @@ it('Filling data in the "Email" field  and verification', () => {
 })
 
 it('Selecting "Male" gender value and verification', () => {
-    cy.get('#gender-radio-1').check({ force: true })
+    cy.get(DATA_LOCATORS.maleGender).check({ force: true })
     .should("be.checked");
 })
 
 it('Selecting "Female" gender value  and verification', () => {
-    cy.get('#gender-radio-2').check({ force: true })
+    cy.get(DATA_LOCATORS.femaleGender).check({ force: true })
     .should("be.checked");
 })
 
 it('Selecting "Other" gender value  and verification', () => {
-    cy.get('#gender-radio-3').check({ force: true })
+    cy.get(DATA_LOCATORS.otherGender).check({ force: true })
     .should("be.checked");
 })
 
-it('Filling data in the "Email" field  and verification', () => {
-    cy.get('#userNumber').type(testData.RANDOM_PHONE_NUMBER)
+it('Filling data in the "User Number" field  and verification', () => {
+    cy.get(DATA_LOCATORS.userNumber).type(testData.RANDOM_PHONE_NUMBER)
     .should("have.value",testData.RANDOM_PHONE_NUMBER);
 })
 
-it('Filling data in the "Email" field  and verification', () => {
-    cy.get('#dateOfBirthInput').click()
-    cy.get('.react-datepicker__month-select').select("June");
-    cy.get('.react-datepicker__year-select').select('1999');
-    cy.get('.react-datepicker__day.react-datepicker__day--004').first().click();
-    cy.get('#dateOfBirthInput').should("have.value", "04 Jun 1999")
+it('Filling data in the "Date of birth" field  and verification', () => {
+    cy.get(DATA_LOCATORS.dateOfBirth).click().should('be.visible');
+    cy.get(DATA_LOCATORS.month).select("June");
+    cy.get(DATA_LOCATORS.year).select('1999');
+    cy.get(DATA_LOCATORS.day).first().should('be.visible').click();
+    cy.get(DATA_LOCATORS.dateOfBirth).should("have.value", "04 Jun 1999")
 })
 
 it('Choosing random "subject" value', () => {
-    cy.get('.subjects-auto-complete__value-container').type(`${func.randomSubject()}{enter}`).click()
-    // .should("include.text", func.randomSubject());
+    cy.get(DATA_LOCATORS.subject).type(`${func.randomSubject()}{enter}`).click()
+    // .should("include.text", `${func.randomSubject()}`);
 })
 
 it('Selecting all values in checkboxes', () => {
-    cy.get('[type="checkbox"]').check({ force: true })
+    cy.get(DATA_LOCATORS.checkbox).check({ force: true })
     .should("be.checked");
 })
 
 it('Filling data in the "Current Adress" field  and verification', () => {
-    cy.get('#currentAddress').type(testData.RANDOM_ADDRESS)
+    cy.get(DATA_LOCATORS.currentAddress).type(testData.RANDOM_ADDRESS)
     .should("have.value",testData.RANDOM_ADDRESS);
 })
 
 it('Filling data in the "State" field  and verification', () => {
-    cy.get('#state').type(`${func.randomState()}{enter}`)
-    // .should("include.text",func.randomState);
+    cy.get(DATA_LOCATORS.state).type(`${func.randomState()}{enter}`)
+    // .should("have.value",`${func.randomState}`);
 })
 
 it('Filling data in the "City" field  and verification', () => {
-    cy.get('#city').click()
-    cy.get('#react-select-4-option-0').should('be.visible').click()
-    // .should("include.text",func.randomCities);
+    cy.get(DATA_LOCATORS.city).click().should('be.visible');
+    cy.get(DATA_LOCATORS.dropdownValue).should('be.visible').click();
+})
+
+it('Submitting Data', () => {
+    cy.get(DATA_LOCATORS.submit).click()
+    .should('be.visible')
+})
+it('Checking the correctness of all data', () => {
+    cy.get('.modal-body')
+    cy.contains(testData.RANDOM_NAME);
+    cy.contains(testData.RANDOM_LAST_NAME);
+    cy.contains(testData.RANDOM_EMAIL);
+    cy.contains('Other');//gender
+    cy.contains(testData.RANDOM_PHONE_NUMBER);
+    cy.contains('04 June,1999');//date of birth
+    cy.contains('Sports, Reading, Music');//hobbies
+    cy.contains(testData.RANDOM_ADDRESS);
+    cy.contains(funcrandomState())
 })
 });
+
+// describe('Posistive flow testing', () => {
+//     before (()=> {
+//     cy.visit('/automation-practice-form')
+// });
+
+// it('Filling data in the "First Name" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.firstName).type(testData.RANDOM_NAME)
+//     .should("have.value", testData.RANDOM_NAME);
+// })
+
+// it('Filling data in the "Last Name" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.lastName).type(testData.RANDOM_LAST_NAME)
+//     .should("have.value", testData.RANDOM_LAST_NAME);
+// })
+
+// it('Filling data in the "Email" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.userEmail).type(testData.RANDOM_EMAIL)
+//     .should("have.value", testData.RANDOM_EMAIL);
+// })
+
+// it('Selecting "Male" gender value and verification', () => {
+//     cy.get(DATA_LOCATORS.maleGender).check({ force: true })
+//     .should("be.checked");
+// })
+
+// it('Selecting "Female" gender value  and verification', () => {
+//     cy.get(DATA_LOCATORS.femaleGender).check({ force: true })
+//     .should("be.checked");
+// })
+
+// it('Selecting "Other" gender value  and verification', () => {
+//     cy.get(DATA_LOCATORS.otherGender).check({ force: true })
+//     .should("be.checked");
+// })
+
+// it('Filling data in the "User Number" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.userNumber).type(testData.RANDOM_PHONE_NUMBER)
+//     .should("have.value",testData.RANDOM_PHONE_NUMBER);
+// })
+
+// it('Filling data in the "Date of birth" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.dateOfBirth).click()
+//     cy.get(DATA_LOCATORS.month).select("June");
+//     cy.get(DATA_LOCATORS.year).select('1999');
+//     cy.get(DATA_LOCATORS.day).first().click();
+//     cy.get(DATA_LOCATORS.dateOfBirth).should("have.value", "04 Jun 1999")
+// })
+
+// it('Choosing random "subject" value', () => {
+//     cy.get(DATA_LOCATORS.subject).type(`${func.randomSubject()}{enter}`).click()
+//     // .should("include.text", func.randomSubject());
+// })
+
+// it('Selecting all values in checkboxes', () => {
+//     cy.get(DATA_LOCATORS.checkbox).check({ force: true })
+//     .should("be.checked");
+// })
+
+// it('Filling data in the "Current Adress" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.currentAddress).type(testData.RANDOM_ADDRESS)
+//     .should("have.value",testData.RANDOM_ADDRESS);
+// })
+
+// it('Filling data in the "State" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.state).type(`${func.randomState()}{enter}`)
+//     // .should("include.text",func.randomState);
+// })
+
+// it('Filling data in the "City" field  and verification', () => {
+//     cy.get(DATA_LOCATORS.city).click().should('be.visible');
+//     cy.get(DATA_LOCATORS.dropdownValue).should('be.visible').click();
+//     // .should("include.text",func.randomCities);
+// })
+// });
