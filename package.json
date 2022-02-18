@@ -1,0 +1,19 @@
+{
+  "name": "function",
+  "version": "1.0.0",
+  "description": "aqa task",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "AQA team",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "supertest": "^6.2.2"
+  },
+  "devDependencies": {
+    "cypress": "^9.4.1",
+    "cypress-file-upload": "^5.0.8"
+  }
+}
