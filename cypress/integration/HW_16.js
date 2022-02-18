@@ -164,7 +164,7 @@ it('Filling invalid data in the "State" field  and verification', () => {
     .should("not.have.value", "Lvivs'ka");
 })
 
-it('Ensure that field is disabled', () => {
+it('Ensure that the "City" field is disabled', () => {
     cy.get(DATA_LOCATORS.city)
     .should('not.to.be.disabled');
 })
