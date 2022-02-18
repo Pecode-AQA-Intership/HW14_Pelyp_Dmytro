@@ -136,10 +136,10 @@ it('Filling invalid data in the "User Number" field  and verification', () => {
     .should("have.value",'teevwe@fwe');
 })
 
-it('Filling invalid data in the "Date of birth" field  and verification', () => {
+it('Filling invalid data in the "Date of birth" field  and verification (should fail)', () => {
     cy.get(DATA_LOCATORS.dateOfBirth).click()
     cy.get(DATA_LOCATORS.month).select("June");
-    cy.get(DATA_LOCATORS.year).select('1899');//test should fail
+    cy.get(DATA_LOCATORS.year).select('1899');
     cy.get(DATA_LOCATORS.day).first().click();
     cy.get(DATA_LOCATORS.dateOfBirth).should("not.have.value", "04 Jun 1899")
 })
