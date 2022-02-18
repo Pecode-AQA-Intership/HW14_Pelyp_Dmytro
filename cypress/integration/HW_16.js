@@ -52,7 +52,7 @@ it('Filling data in the "Date of birth" field  and verification', () => {
 
 it('Choosing random "subject" value', () => {
     cy.get(DATA_LOCATORS.subject).type(`${func.randomSubject()}{enter}`).click()
-   .should("have.value", '');
+   .should("not.be.empty");
 })
 
 it('Selecting all values in checkboxes', () => {
@@ -71,7 +71,7 @@ it('Filling data in the "Current Adress" field  and verification', () => {
 
 it('Filling data in the "State" field  and verification', () => {
     cy.get(DATA_LOCATORS.state).type(`${func.randomState()}{enter}`)
-    .should("have.value",'');
+    .should("not.be.empty");
 })
 
 it('Filling data in the "City" field  and verification', () => {
