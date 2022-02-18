@@ -29,5 +29,6 @@ export const DATA_LOCATORS = {
     month : '.react-datepicker__month-select',
     year : '.react-datepicker__year-select',
     day : '.react-datepicker__day.react-datepicker__day--004',
+    uploadPic : '#uploadPicture',
 };
 
