@@ -50,12 +50,29 @@ it('Filling data in the "Email" field  and verification', () => {
     cy.get('#dateOfBirthInput').should("have.value", "04 Jun 1999")
 })
 
-it('Filling data in the "Email" field  and verification', () => {
-    cy.get('.subjects-auto-complete__value-container').type(func.randomSubject()).click()
+it('Choosing random "subject" value', () => {
+    cy.get('.subjects-auto-complete__value-container').type(`${func.randomSubject()}{enter}`).click()
+    // .should("include.text", func.randomSubject());
 })
 
 it('Selecting all values in checkboxes', () => {
     cy.get('[type="checkbox"]').check({ force: true })
+    .should("be.checked");
 })
 
+it('Filling data in the "Current Adress" field  and verification', () => {
+    cy.get('#currentAddress').type(testData.RANDOM_ADDRESS)
+    .should("have.value",testData.RANDOM_ADDRESS);
+})
+
+it('Filling data in the "State" field  and verification', () => {
+    cy.get('#state').type(`${func.randomState()}{enter}`)
+    // .should("include.text",func.randomState);
+})
+
+it('Filling data in the "City" field  and verification', () => {
+    cy.get('#city').click()
+    cy.get('#react-select-4-option-0').should('be.visible').click()
+    // .should("include.text",func.randomCities);
+})
 });
