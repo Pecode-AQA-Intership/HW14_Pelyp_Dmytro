@@ -1,6 +1,6 @@
-import * as data from './consts.js';
-import { DATA_LOCATORS } from './locators.js'; 
-import * as func from './funcs.js';
+import * as data from '../fixtures/consts.js';
+import { DATA_LOCATORS } from '../fixtures/locators.js'; 
+import * as func from '../fixtures/funcs.js';
 
 const { _ } = Cypress;
 
