@@ -417,6 +417,7 @@ describe('Sorting table', () => {
           })
         })
     });
+    
     it ("Checking that the 'Action' column isn't sortable", () => {
         cy.get(DATA_LOCATORS.actionColumn).click()
         .should("not.have.class", "-sort-desc")
