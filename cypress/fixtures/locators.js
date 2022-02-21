@@ -1,4 +1,5 @@
 export const DATA_LOCATORS = {
+    fullName : "#userName",
     firstName: "#firstName",
     lastName: "#lastName",
     userEmail: "#userEmail",
@@ -22,6 +23,7 @@ export const DATA_LOCATORS = {
     subject : '.subjects-auto-complete__value-container',
     checkbox : '[type="checkbox"]',
     currentAddress : '#currentAddress',
+    permanentAddress : '#permanentAddress',
     state : '#state',
     city : '#city',
     dropdownValue : '#react-select-4-option-0',
