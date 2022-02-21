@@ -30,5 +30,7 @@ export const DATA_LOCATORS = {
     year : '.react-datepicker__year-select',
     day : '.react-datepicker__day.react-datepicker__day--004',
     uploadPic : '#uploadPicture',
+    actionColumn : '.rt-th:nth-child(7)',
+    columnHeader : '.rt-resizable-header-content',
+    generalColumnHeader : '[role=columnheader] .ag-row',
 };
-
